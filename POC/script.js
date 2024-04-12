@@ -11,6 +11,7 @@ function addTask() {
     let li = document.createElement("li");
     li.innerHTML = inputBox.value;
     taskList.appendChild(li);
+
     let span = document.createElement("span");
     span.innerHTML = "\u00d7";
     li.appendChild(span);
@@ -20,11 +21,11 @@ function addTask() {
 
 taskList.addEventListener(
   "click",
-  function (e) {
-    if (e.target.tagName === "LI") {
-      e.target.classList.toggle("checked");
-    } else if (e.target.tagName === "SPAN") {
-      e.target.parentElement.remove();
+  function (event) {
+    if (event.target.tagName === "LI") {
+      event.target.classList.toggle("checked");
+    } else if (event.target.tagName === "SPAN") {
+      event.target.parentElement.remove();
     }
   },
   false
