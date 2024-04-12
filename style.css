@@ -14,3 +14,16 @@ body {
   min-height: 100vh;
   background: #eafdfc;
 }
+
+li {
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+  background-color: #91d8e4;
+}
+
+.doneButton {
+  border-radius: 50%;
+  width: 2rem;
+  border-style: none;
+}
