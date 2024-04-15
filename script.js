@@ -22,7 +22,6 @@ function addTask() {
     newTask.appendChild(newDoneButton);
     newTask.appendChild(newTaskText);
     newTask.appendChild(newDeleteButton);
-
     toDoList.appendChild(newTask);
     //ID hinzufügen
     taskNum = toDoList.getElementsByTagName("li").length;
@@ -47,3 +46,14 @@ document.addEventListener("click", function (event) {
     event.target.parentNode.remove();
   }
 });
+
+// Am Ende der Aufgabenliste einen "Alle löschen" Button hinzufügen
+const deleteAllButton = document.createElement("button");
+deleteAllButton.textContent = "Alle löschen";
+deleteAllButton.addEventListener("click", function () {
+  const toDoItems = document.querySelectorAll("#todo-list li");
+  toDoItems.forEach((item) => {
+    item.remove();
+  });
+});
+toDoList.parentNode.appendChild(deleteAllButton); // Hinzufügen des Buttons ans Ende der UL, nicht ans Ende der Eingabe
