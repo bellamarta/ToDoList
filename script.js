@@ -38,3 +38,10 @@ function addTask() {
     console.log("Input is empty");
   }
 }
+
+//Delete function
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("deleteButton")) {
+    event.target.parentNode.remove();
+  }
+});
