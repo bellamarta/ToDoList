@@ -34,3 +34,25 @@ li {
   width: 2rem;
   border-style: none;
 }
+
+ul li {
+  list-style: none;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  position: absolute;
+}
+
+ul li.checked {
+  font-size: 16px;
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  color: #555;
+}

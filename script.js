@@ -46,4 +46,36 @@ document.addEventListener("click", function (event) {
   if (event.target.classList.contains("deleteButton")) {
     event.target.parentNode.remove();
   }
+  if (event.target.classList.contains("doneButton")) {
+    console.log(event.target.parentNode);
+  }
+});
+
+//Mark as Done function
+// toDoList.addEventListener(
+//   "click",
+//   function (e) {
+//     if (e.target.tagName === "li") {
+//       e.target.classList.toggle("checked");
+//     } else if (e.target.tagName === "SPAN") {
+//       e.target.parentElement.remove();
+//     }
+//   },
+//   false
+// );
+
+// listContainer.addEventListener(
+//   "click",
+//   function (e) {
+//     if (e.target.tagName === "li") {
+//       e.target.classList.toggle("checked");
+//     }
+//   },
+//   false
+// );
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("addButton")) {
+    event.target.parentNode.remove();
+  }
 });
