@@ -14,6 +14,8 @@ function addTask() {
     let newTask = document.createElement("li");
     let newTaskText = document.createElement("p");
     newTaskText.textContent = toDoInput.value;
+    //Make content editable with next line
+    newTaskText.contentEditable = true;
     let newDeleteButton = document.createElement("button");
     newDeleteButton.innerHTML = "Delete";
 
