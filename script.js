@@ -48,6 +48,17 @@ document.addEventListener("click", function (event) {
   }
 });
 
+// Am Ende der Aufgabenliste einen "Alle löschen" Button hinzufügen
+const deleteAllButton = document.createElement("button");
+deleteAllButton.textContent = "Delete all";
+deleteAllButton.addEventListener("click", function () {
+  const toDoItems = document.querySelectorAll("#todo-list li");
+  toDoItems.forEach((item) => {
+    item.remove();
+  });
+});
+toDoList.parentNode.appendChild(deleteAllButton); // Hinzufügen des Buttons ans Ende der UL, nicht ans Ende der Eingabe
+
 function saveData() {
   localStorage.setItem("data", toDoList.innerHTML);
 }
