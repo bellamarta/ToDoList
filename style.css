@@ -2,35 +2,100 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 body {
-  width: 100%;
-  min-height: 100vh;
-  background: #eafdfc;
-  margin: 3rem;
+  font-family: Arial, sans-serif;
+  background-color: #eafdfc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #container {
-  min-width: 50vw;
-  /* border-style: solid;
-  border-color: rgb(189, 189, 189); */
+  background-color: #bfeaf5;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 320px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px); /* Breite des Inputfelds abzüglich Padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #82aae3;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+button {
+  background-color: #91d8e4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #82aae3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
+  background-color: #bfeaf5;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
   display: flex;
-  gap: 1rem;
-  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li .deleteButton {
   background-color: #91d8e4;
+  color: white;
+  border: none;
+  border-radius: 2px; /* Minimaler Borderradius */
+  padding: 5px;
+  margin-left: 5px; /* Abstand zwischen li und done Button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li .deleteButton:hover {
+  background-color: #82aae3;
 }
 
 .doneButton {
+  background-color: #3399ff;
+  color: white;
+  border: none;
   border-radius: 50%;
-  width: 2rem;
-  border-style: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.doneButton:hover {
+  background-color: #1a8cff;
 }
