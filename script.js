@@ -47,3 +47,7 @@ document.addEventListener("click", function (event) {
     event.target.parentNode.remove();
   }
 });
+
+function saveData() {
+  localStorage.setItem("data", toDoList.innerHTML);
+}
