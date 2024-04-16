@@ -50,7 +50,7 @@ document.addEventListener("click", function (event) {
 
 // Am Ende der Aufgabenliste einen "Alle löschen" Button hinzufügen
 const deleteAllButton = document.createElement("button");
-deleteAllButton.textContent = "Alle löschen";
+deleteAllButton.textContent = "Delete all";
 deleteAllButton.addEventListener("click", function () {
   const toDoItems = document.querySelectorAll("#todo-list li");
   toDoItems.forEach((item) => {
