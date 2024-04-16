@@ -128,3 +128,19 @@ function showTask() {
   toDoList.innerHTML = localStorage.getItem("data");
 }
 showTask();
+
+//Marks-As-Done function
+toDoList.addEventListener("click", (event) => {
+  // Überprüfen, ob der "Done" Button gedrückt wurde
+  if (event.target.classList.contains("doneButton")) {
+    // Elternelement (li) des Buttons finden
+    const listItem = event.target.parentNode;
+    // Durchstreichen des Textes im Listenelement
+    const taskText = listItem.querySelector(".taskText");
+    taskText.style.textDecoration = "line-through";
+    // Ändern der Hintergrundfarbe des Buttons
+    event.target.style.backgroundColor = " #4caf50";
+    // Checkmark-Symbol einfügen auf Button
+    event.target.innerHTML = "&#10004;";
+  }
+});
