@@ -14,6 +14,8 @@ function addTask() {
     let newTask = document.createElement("li");
     let newTaskText = document.createElement("p");
     newTaskText.textContent = toDoInput.value;
+    //Make content editable with next line
+    newTaskText.contentEditable = true;
     let newDeleteButton = document.createElement("button");
     newDeleteButton.innerHTML = "Delete";
 
@@ -35,8 +37,26 @@ function addTask() {
     newTaskText.setAttribute("class", `taskText`);
     newDeleteButton.setAttribute("class", `deleteButton`);
 
+    //empty the input field
     toDoInput.value = "";
   } else {
     console.log("Input is empty");
   }
 }
+
+//Delete function
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("deleteButton")) {
+    event.target.parentNode.remove();
+  }
+
+  if (event.target.classList.contains("doneButton")) {
+    const doneButton = event.target;
+    console.log(doneButton);
+    const listElement = doneButton.parentNode;
+    console.log(listElement);
+    const taskText = listElement.getElementsByTagName("p")[0];
+    console.log(taskText);
+    taskText.style.textDecoration = "line-through";
+  }
+});
