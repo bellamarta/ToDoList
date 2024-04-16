@@ -36,6 +36,9 @@ function addTask() {
     newTask.setAttribute("class", `task`);
     newTaskText.setAttribute("class", `taskText`);
     newDeleteButton.setAttribute("class", `deleteButton`);
+
+    //empty the input field
+    toDoInput.value = "";
   } else {
     console.log("Input is empty");
   }
@@ -45,5 +48,15 @@ function addTask() {
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("deleteButton")) {
     event.target.parentNode.remove();
+  }
+
+  if (event.target.classList.contains("doneButton")) {
+    const doneButton = event.target;
+    console.log(doneButton);
+    const listElement = doneButton.parentNode;
+    console.log(listElement);
+    const taskText = listElement.getElementsByTagName("p")[0];
+    console.log(taskText);
+    taskText.style.textDecoration = "line-through";
   }
 });
