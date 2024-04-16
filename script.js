@@ -34,6 +34,8 @@ function addTask() {
     newTask.setAttribute("class", `task`);
     newTaskText.setAttribute("class", `taskText`);
     newDeleteButton.setAttribute("class", `deleteButton`);
+
+    toDoInput.value = "";
   } else {
     console.log("Input is empty");
   }
