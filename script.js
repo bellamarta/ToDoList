@@ -43,6 +43,9 @@ function addTask() {
   } else {
     console.log("Input is empty");
   }
+
+  //Save ToDo-List in local storage
+  saveData();
 }
 
 // add task with enter key
@@ -57,6 +60,7 @@ toDoInput.addEventListener("keypress", function (e) {
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("deleteButton")) {
     event.target.parentNode.remove();
+    saveData();
   }
 
   if (event.target.classList.contains("doneButton")) {
@@ -77,6 +81,18 @@ deleteAllButton.addEventListener("click", function () {
   const toDoItems = document.querySelectorAll("#todo-list li");
   toDoItems.forEach((item) => {
     item.remove();
+    saveData();
   });
 });
 toDoList.parentNode.appendChild(deleteAllButton); // Hinzufügen des Buttons ans Ende der UL, nicht ans Ende der Eingabe
+
+//ToDo-Liste in local storage speichern
+function saveData() {
+  localStorage.setItem("data", toDoList.innerHTML);
+}
+
+//ToDo-Liste wieder aus dem local storage laden
+function showTask() {
+  toDoList.innerHTML = localStorage.getItem("data");
+}
+showTask();
