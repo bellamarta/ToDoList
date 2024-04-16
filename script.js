@@ -5,6 +5,7 @@ const toDoList = document.getElementById("todo-list");
 let taskNum = 0;
 addButton.addEventListener("click", addTask);
 
+//add function
 function addTask() {
   if (toDoInput.value != "") {
     console.log("Add Task");
@@ -43,6 +44,14 @@ function addTask() {
     console.log("Input is empty");
   }
 }
+
+// add task with enter key
+
+toDoInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    addTask();
+  }
+});
 
 //Delete function
 document.addEventListener("click", function (event) {
