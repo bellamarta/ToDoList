@@ -13,18 +13,26 @@ body {
   height: 100vh;
 }
 
+.app-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentrieren des Inhalts horizontal */
+}
+
 #container {
   background-color: #bfeaf5;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 320px;
+  margin-top: 20px; /* Abstand zwischen Logo und Container */
 }
 
 h1 {
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
+  text-align: center;
 }
 
 .input-container {
@@ -55,13 +63,22 @@ button {
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+#add-button {
   background-color: #82aae3;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+#add-button:hover {
+  background-color: #91d8e4;
+}
+button:hover {
+  background-color: #e38294;
 }
 
 ul {
@@ -77,13 +94,11 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   box-shadow: 1px 0.5px 2px 0.5px;
-  box-shadow
 }
 
 li .deleteButton {
-  background-color: #91d8e4;
+  background-color: #eafdfc;
   color: white;
   border: none;
   border-radius: 2px;
@@ -92,15 +107,12 @@ li .deleteButton {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 0;
+  background-image: url("./images/close2.png"); /* Hinzufügen des Error-Bildes als Hintergrundbild */
+  background-size: cover;
 }
 
 li .deleteButton:hover {
-  background-color: #82aae3;
-}
-
-.deleteButton::before {
-  content: "\1F5D1"; /* Unicode für das Papierkorb-Symbol */
-  font-size: 16px;
+  background-color: #e382a263;
 }
 
 .doneButton {
@@ -115,4 +127,25 @@ li .deleteButton:hover {
 
 .doneButton:hover {
   background-color: #1a8cff;
+}
+
+#print-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #91d8e478;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px; /* Breite des Bildes */
+  height: 20px; /* Höhe des Bildes */
+  padding: 0; /* Kein Innenabstand im Button */
+  border: none; /* Keine Rahmen um den Button */
+  background: none; /* Kein Hintergrund für den Button */
+  cursor: pointer; /* Cursor als Zeiger */
+  transition: background-color 0.3s ease;
+}
+
+#print-button:hover {
+  background-color: #82aae3;
 }
