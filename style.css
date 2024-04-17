@@ -98,7 +98,7 @@ li .deleteButton {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 0;
-  background-image: url("./images/close.png"); /* Hinzufügen des Error-Bildes als Hintergrundbild */
+  background-image: url("./images/close2.png"); /* Hinzufügen des Error-Bildes als Hintergrundbild */
   background-size: cover;
 }
 
