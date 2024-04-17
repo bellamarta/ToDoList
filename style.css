@@ -63,13 +63,22 @@ button {
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+#add-button {
   background-color: #82aae3;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+#add-button:hover {
+  background-color: #91d8e4;
+}
+button:hover {
+  background-color: #e38294;
 }
 
 ul {
@@ -103,7 +112,7 @@ li .deleteButton {
 }
 
 li .deleteButton:hover {
-  background-color: #82aae3;
+  background-color: #e382a263;
 }
 
 .doneButton {
