@@ -89,7 +89,7 @@ li {
 }
 
 li .deleteButton {
-  background-color: #91d8e4;
+  background-color: #eafdfc;
   color: white;
   border: none;
   border-radius: 2px;
@@ -98,15 +98,12 @@ li .deleteButton {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 0;
+  background-image: url("./images/close.png"); /* Hinzufügen des Error-Bildes als Hintergrundbild */
+  background-size: cover;
 }
 
 li .deleteButton:hover {
   background-color: #82aae3;
-}
-
-.deleteButton::before {
-  content: "\1F5D1"; /* Unicode für das Papierkorb-Symbol */
-  font-size: 16px;
 }
 
 .doneButton {
