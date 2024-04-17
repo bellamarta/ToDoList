@@ -118,3 +118,67 @@ toDoList.addEventListener("click", (event) => {
     console.log(taskText.style.textDecoration);
   }
 });
+// Funktion zum Drucken der To-Do-Liste
+function printToDoList() {
+  // Inhalt der To-Do-Liste abrufen
+  const toDoListContent = document.getElementById("todo-list").innerHTML;
+  // Neues Fenster öffnen
+  const printWindow = window.open("", "_blank");
+  // HTML-Struktur für das Drucken erstellen
+  const printContent = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Print ToDo List</title>
+      <style>
+        /* CSS-Stile für den Druck */
+        /* Stile der ToDo-Liste */
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        li {
+          background-color: #eafdfc;
+          padding: 0.2rem;
+          margin-bottom: 0.3rem;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-shadow: 1px 0.5px 2px 0.5px;
+        }
+        li .deleteButton {
+          background-color: #eafdfc;
+          color: white;
+          border: none;
+          border-radius: 2px;
+          padding: 5px;
+          margin-left: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          font-size: 0;
+          background-image: url("./images/close2.png"); /* Hinzufügen des Error-Bildes als Hintergrundbild */
+          background-size: cover;
+        }
+        li .deleteButton:hover {
+          background-color: #e382a263;
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Inhalt der ToDo-Liste -->
+      <ul>${toDoListContent}</ul>
+    </body>
+    </html>
+  `;
+  // Inhalt in das neue Fenster schreiben
+  printWindow.document.write(printContent);
+  // Drucken auslösen
+  printWindow.print();
+}
+
+// Event-Listener für den Drucker-Button
+const printButton = document.getElementById("print-button");
+printButton.addEventListener("click", printToDoList);
