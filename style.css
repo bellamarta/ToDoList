@@ -30,6 +30,7 @@ h1 {
 .input-container {
   display: flex;
   align-items: center;
+  padding-bottom: 0.7rem;
 }
 
 input[type="text"] {
@@ -69,13 +70,16 @@ ul {
 }
 
 li {
-  background-color: #bfeaf5;
-  padding: 10px;
-  margin-bottom: 5px;
+  background-color: #eafdfc;
+  padding: 0.2rem;
+  margin-bottom: 0.3rem;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  box-shadow: 1px 0.5px 2px 0.5px;
+  box-shadow
 }
 
 li .deleteButton {
