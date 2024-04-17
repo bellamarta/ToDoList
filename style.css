@@ -27,10 +27,17 @@ h1 {
   margin-bottom: 20px;
 }
 
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
 input[type="text"] {
-  width: calc(100% - 20px); /* Breite des Inputfelds abzüglich Padding */
+  width: calc(
+    100% - 80px
+  ); /* Breite des Inputfelds abzüglich Platz für den Button */
   padding: 10px;
-  margin-bottom: 10px;
+  margin-right: 10px;
   border: 1px solid #82aae3;
   border-radius: 4px;
   font-size: 16px;
@@ -75,15 +82,21 @@ li .deleteButton {
   background-color: #91d8e4;
   color: white;
   border: none;
-  border-radius: 2px; /* Minimaler Borderradius */
+  border-radius: 2px;
   padding: 5px;
-  margin-left: 5px; /* Abstand zwischen li und done Button */
+  margin-left: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 0;
 }
 
 li .deleteButton:hover {
   background-color: #82aae3;
+}
+
+.deleteButton::before {
+  content: "\1F5D1"; /* Unicode für das Papierkorb-Symbol */
+  font-size: 16px;
 }
 
 .doneButton {
@@ -98,26 +111,4 @@ li .deleteButton:hover {
 
 .doneButton:hover {
   background-color: #1a8cff;
-}
-
-ul li {
-  list-style: none;
-  font-size: 12px;
-  user-select: none;
-  cursor: pointer;
-  position: relative;
-}
-
-ul li::before {
-  position: absolute;
-}
-
-ul li.checked {
-  font-size: 16px;
-  color: #555;
-  text-decoration: line-through;
-}
-
-ul li.checked::before {
-  color: #555;
 }
