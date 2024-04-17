@@ -61,43 +61,7 @@ document.addEventListener("click", function (event) {
     event.target.parentNode.remove();
     saveData();
   }
-
-  if (event.target.classList.contains("doneButton")) {
-    const doneButton = event.target;
-    console.log(doneButton);
-    const listElement = doneButton.parentNode;
-    console.log(listElement);
-    const taskText = listElement.getElementsByTagName("p")[0];
-    console.log(taskText);
-    taskText.style.textDecoration = "line-through";
-  }
-  if (event.target.classList.contains("doneButton")) {
-    console.log(event.target.parentNode);
-  }
 });
-
-//Mark as Done function
-// toDoList.addEventListener(
-//   "click",
-//   function (e) {
-//     if (e.target.tagName === "li") {
-//       e.target.classList.toggle("checked");
-//     } else if (e.target.tagName === "SPAN") {
-//       e.target.parentElement.remove();
-//     }
-//   },
-//   false
-// );
-
-// listContainer.addEventListener(
-//   "click",
-//   function (e) {
-//     if (e.target.tagName === "li") {
-//       e.target.classList.toggle("checked");
-//     }
-//   },
-//   false
-// );
 
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("addButton")) {
@@ -136,10 +100,21 @@ toDoList.addEventListener("click", (event) => {
     const listItem = event.target.parentNode;
     // Durchstreichen des Textes im Listenelement
     const taskText = listItem.querySelector(".taskText");
-    taskText.style.textDecoration = "line-through";
-    // Ändern der Hintergrundfarbe des Buttons
-    event.target.style.backgroundColor = " #4caf50";
-    // Checkmark-Symbol einfügen auf Button
-    event.target.innerHTML = "&#10004;";
+
+    if (!listItem.classList.contains("checked")) {
+      taskText.style.textDecoration = "line-through";
+      listItem.classList.add("checked");
+      // Ändern der Hintergrundfarbe des Buttons
+      event.target.style.backgroundColor = " #4caf50";
+      // Checkmark-Symbol einfügen auf Button
+      event.target.innerHTML = "&#10004;";
+    } else {
+      // Ändern der Hintergrundfarbe des Buttons
+      event.target.style.backgroundColor = " #3399ff";
+      listItem.classList.remove("checked");
+      event.target.innerHTML = "";
+      taskText.style.textDecoration = "none";
+    }
+    console.log(taskText.style.textDecoration);
   }
 });
