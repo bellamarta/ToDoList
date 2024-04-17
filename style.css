@@ -13,18 +13,26 @@ body {
   height: 100vh;
 }
 
+.app-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentrieren des Inhalts horizontal */
+}
+
 #container {
   background-color: #bfeaf5;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 320px;
+  margin-top: 20px; /* Abstand zwischen Logo und Container */
 }
 
 h1 {
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
+  text-align: center;
 }
 
 .input-container {
@@ -77,9 +85,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   box-shadow: 1px 0.5px 2px 0.5px;
-  box-shadow
 }
 
 li .deleteButton {
