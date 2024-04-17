@@ -23,7 +23,6 @@ function addTask() {
     newTask.appendChild(newDoneButton);
     newTask.appendChild(newTaskText);
     newTask.appendChild(newDeleteButton);
-
     toDoList.appendChild(newTask);
     //ID hinzufügen
     taskNum = toDoList.getElementsByTagName("li").length;
