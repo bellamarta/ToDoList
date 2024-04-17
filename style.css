@@ -128,3 +128,24 @@ li .deleteButton:hover {
 .doneButton:hover {
   background-color: #1a8cff;
 }
+
+#print-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #91d8e478;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px; /* Breite des Bildes */
+  height: 20px; /* Höhe des Bildes */
+  padding: 0; /* Kein Innenabstand im Button */
+  border: none; /* Keine Rahmen um den Button */
+  background: none; /* Kein Hintergrund für den Button */
+  cursor: pointer; /* Cursor als Zeiger */
+  transition: background-color 0.3s ease;
+}
+
+#print-button:hover {
+  background-color: #82aae3;
+}
