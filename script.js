@@ -103,16 +103,20 @@ toDoList.addEventListener("click", (event) => {
 
     if (!listItem.classList.contains("checked")) {
       taskText.style.textDecoration = "line-through";
+      taskText.style.fontWeight = "Bold";
       listItem.classList.add("checked");
       // Ändern der Hintergrundfarbe des Buttons
-      event.target.style.backgroundColor = " #4caf50";
+      event.target.style.backgroundColor = " #79e9a2";
       // Checkmark-Symbol einfügen auf Button
       event.target.innerHTML = "&#10004;";
+      event.target.style.padding = "1px";
+      
     } else {
       // Ändern der Hintergrundfarbe des Buttons
-      event.target.style.backgroundColor = " #3399ff";
+      event.target.style.backgroundColor = " #fff";
       listItem.classList.remove("checked");
       event.target.innerHTML = "";
+      taskText.style.fontWeight = "normal";
       taskText.style.textDecoration = "none";
     }
     console.log(taskText.style.textDecoration);
